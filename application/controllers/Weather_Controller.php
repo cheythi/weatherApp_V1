@@ -22,7 +22,9 @@ class Weather_Controller extends CI_Controller
 
         $data['weather'] = $weather;
 
-        $this->load->view('weather_view', $data);
+        $this->load->view('header');
+        $this->load->view('currentWeather_view', $data);
+        $this->load->view('footer');
 
     }
     
