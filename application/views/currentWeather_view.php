@@ -70,38 +70,16 @@
             <h3>General Info</h3>
             <div class="card">
                 <div class="card-body">
-                    <!-- Convert Time to LK -->
                     <?php
-                        $timestamp = $weather['sys']['sunrise']; 
-
-                        // timestamp convert to UTC
-                        $datetime = new DateTime();
-                        $datetime->setTimestamp($timestamp);
-                        $datetime->setTimezone(new DateTimeZone('UTC'));
-
-                        // UTC to LK timee
-                        $timezone_lk = new DateTimeZone('Asia/Colombo');
-                        $datetime->setTimezone($timezone_lk);
-
-                        $sunrise = $datetime->format('Y-m-d H:i:s');
+                        $timestamp = $weather['sys']['sunrise'];  
+                        $lkTime = convertToLkTime($timestamp);
                     ?>
-                    <p class="card-text">Sunrise: <?php echo $sunrise; ?></p>
-                    <!-- Convert Time to LK -->
+                    <p class="card-text">Sunrise: <?php echo $lkTime; ?></p>
                     <?php
                         $timestamp = $weather['sys']['sunset']; 
-
-                        // timestamp convert to UTC
-                        $datetime = new DateTime();
-                        $datetime->setTimestamp($timestamp);
-                        $datetime->setTimezone(new DateTimeZone('UTC'));
-
-                        // UTC to LK timee
-                        $timezone_lk = new DateTimeZone('Asia/Colombo');
-                        $datetime->setTimezone($timezone_lk);
-
-                        $sunset = $datetime->format('Y-m-d H:i:s');
+                        $lkTime = convertToLkTime($timestamp);
                     ?>
-                    <p class="card-text">Sunset: <?php echo $sunset; ?></p>
+                    <p class="card-text">Sunset: <?php echo $lkTime; ?></p>
                 </div>
             </div>
         </div>
@@ -117,4 +95,21 @@
         </div>
     </div>
 </div>
+<?php
+    function convertToLkTime($timestamp) {
+        // Convert timestamp to UTC
+        $datetime = new DateTime();
+        $datetime->setTimestamp($timestamp);
+        $datetime->setTimezone(new DateTimeZone('UTC'));
+
+        // Convert UTC to LK time
+        $timezone_lk = new DateTimeZone('Asia/Colombo');
+        $datetime->setTimezone($timezone_lk);
+
+        // Format the LK time
+        $lkTime = $datetime->format('Y-m-d H:i:s');
+
+        return $lkTime;
+    }
+?>
 
