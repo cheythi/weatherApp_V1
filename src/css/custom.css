@@ -1,0 +1,41 @@
+.c_middle_header{
+    margin-top: 3%;
+}
+
+.c_middle_content{
+    margin-top: 4%;
+    height: 600px;
+    width: 1500px;
+    background-color: rgba(250, 250, 250, 0.342);
+    border-radius: 0.25rem;
+}
+
+.c_weather_icon {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.c_weather_icon:hover {
+    transform: scale(1.1);
+}
+
+.col-md-6{
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+.card{
+    border: none;
+}
+
+h3, p{
+    color: rgba(41, 39, 39, 0.72);
+}
+
+h5, h1, a{
+    font-weight: bold;
+    color: rgba(41, 39, 39, 0.72);
+}
