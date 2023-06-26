@@ -10,16 +10,9 @@ class Weather_Controller extends CI_Controller
 
         $latitude  = $this->input->get('latitude');
         $longitude = $this->input->get('longitude');
-        // $unit      = $this->input->get('unit');
-
-        // if (!$latitude || !$longitude) 
-        // {
-        //     echo 'test';
-        //     return;
-        // }
 
         $weather = $this->Weather_Model->getWeatherData($latitude, $longitude);
-
+      
         $data['weather'] = $weather;
 
         $this->load->view('header');
