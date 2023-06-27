@@ -7,6 +7,9 @@ This is a PHP application implemented using the CodeIgniter framework, designed 
 - **Geolocation**: The application utilizes the user's current geolocation to identify their location automatically.
 - **Weather Information**: Using the OpenWeather API, the application fetches weather data for the user's location, including temperature, weather conditions, wind speed, humidity, and more.
 - **Responsive Design**: The frontend of the application is developed using the Bootstrap framework, ensuring a visually appealing and mobile-friendly experience for users.
+    ![image](https://github.com/cheythi/weatherApp_V1/assets/50759110/bec3e72e-94f1-4b2e-b5ce-fd24767cbd1d)
+    ![image](https://github.com/cheythi/weatherApp_V1/assets/50759110/1b496877-4bd2-4a83-b6e3-75e314000fda)
+	
 - **Unit Conversion**: Users have the option to view temperature information in either Celsius or Fahrenheit. The application provides a convenient button to toggle between the two units.
 
 ## Application Workflow
